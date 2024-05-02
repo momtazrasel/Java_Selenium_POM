@@ -3,7 +3,7 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class DemoQAPage {
+public class DemoQAPage{
     public WebDriver driver;
 
 
@@ -12,6 +12,10 @@ public class DemoQAPage {
     }
 
     public By elementsBlock = By.xpath("(//div[@class='card-body'])[1]");
+
+    public void getElementBlock(){
+        ReusableMethod.clickElement(elementsBlock);
+    }
 
 
 }

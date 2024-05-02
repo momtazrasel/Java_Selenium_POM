@@ -1,22 +1,16 @@
 package Tests;
 
-import Base.Base;
 import Pages.DemoQAPage;
+import Pages.ReusableMethod;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-public class DemoQATest extends Base {
-    DemoQAPage demoQA;
-    private WebDriver driver;
-    private ReusableMethod reusableMethod;
-
-    public DemoQATest(WebDriver driver){
-        this.reusableMethod = new ReusableMethod(driver);
-    }
+public class DemoQATest extends DemoSetubTest{
 
     @Test
      public void signInTest(){
-        reusableMethod.clickElement(demoQA.elementsBlock);
+        DemoQAPage demoQAPage = homePage.demoQAPage();
+        demoQAPage.getElementBlock();
     }
 
 

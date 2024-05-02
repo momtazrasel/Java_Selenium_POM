@@ -24,5 +24,8 @@ public class HomePage {
         return new PlayGround(driver);
     }
 
+    public DemoQAPage demoQAPage(){
+        return new DemoQAPage(driver);
+    }
 
 }

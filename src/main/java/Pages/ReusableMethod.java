@@ -1,4 +1,4 @@
-package Tests;
+package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +8,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ReusableMethod {
-    private WebDriver driver;
-    private WebDriverWait wait;
-    private int defaultWaitTime = 5;
+    private static WebDriver driver;
+    private static WebDriverWait wait;
+    private static int defaultWaitTime = 5;
     public ReusableMethod(WebDriver driver){
         this.driver = driver;
     }
@@ -20,7 +20,7 @@ public class ReusableMethod {
      * @param locator
      */
 
-    public void waitUntilElementIsVisible(By locator) {
+    public static void waitUntilElementIsVisible(By locator) {
         wait = new WebDriverWait(driver, Duration.ofSeconds(defaultWaitTime));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
@@ -28,7 +28,7 @@ public class ReusableMethod {
      *
      * @param locator
      */
-    public void clickElement(By locator) {
+    public static void clickElement(By locator) {
         waitUntilElementIsVisible(locator);
         driver.findElement(locator).click();
     }
